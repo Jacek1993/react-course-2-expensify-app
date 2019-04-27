@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch src/ --exec babel src/app.js --out-file=public/scripts/app.js --presets=env,react",
-    "stop": "webpack --watch",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server"
   },
   "author": "",
@@ -17,6 +18,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-react": "^6.24.1",
     "babel-watch": "^2.0.7",
+    "extract-text-webpack-plugin": "^3.0.0",
     "live-server": "^1.2.1",
     "moment": "^2.18.1",
     "nodemon": "^1.18.10",
