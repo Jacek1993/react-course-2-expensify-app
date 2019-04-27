@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch src/ --exec babel src/app.js --out-file=public/scripts/app.js --presets=env,react",
+    "build": "nodemon --watch src/ --exec babel src/app.js --out-file=public/scripts/app.js --presets=env,react",
+    "start": "node server/server.js",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "heroku-postbuild": "npm run --sillent build:prod"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-react": "^6.24.1",
     "babel-watch": "^2.0.7",
+    "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "live-server": "^1.2.1",
     "moment": "^2.18.1",
